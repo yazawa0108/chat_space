@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+**message-table**
+
+body :text
+image :string
+group_id :integer
+user_id :integer
+
+**user-table**
+
+name :text
+e-mail :integer
+pass-word :integer
+
+**group-table**
+
+name :text
