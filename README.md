@@ -23,19 +23,46 @@ Things you may want to cover:
 
 * ...
 
-**message-table**
 
-body :text
-image :string
-group_id :integer
-user_id :integer
+**message-table**
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|image|string||
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
 
 **user-table**
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false|
+|email|integer|null: false|
+|pass-word|integer|null: false|
 
-name :text
-e-mail :integer
-pass-word :integer
+### Association
+- has_many :messages
+- belongs_to :groups_users
 
 **group-table**
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false|
 
-name :text
+### Association
+- has_many :messages
+- belongs_to :groups_users
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
