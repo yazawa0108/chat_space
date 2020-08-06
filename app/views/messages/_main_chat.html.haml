@@ -1,0 +1,23 @@
+.chat-main
+  .chat-main__selected-group
+    .chat-main__selected-group__info
+      .chat-main__selected-group__info__name-fields yazawa
+      .chat-main__selected-group__info__members Member: 谷澤
+
+    .chat-main__selected-group__btn
+      = link_to "https://www.facebook.com/", class: "chat-main__selected-group__btn__set" do
+        edit
+  .chat-main__message-contents
+    .chat-main__message-contents__sender-info
+      .chat-main__message-contents__sender-info__sender-name 谷澤
+      .chat-main__message-contents__sender-info__send-date 08-02
+    .chat-main__message-contents__send-message ヤッホー
+  .chat-main__message-area
+    = form_with url: "https://www.facebook.com/", class: "chat-main__message-area__form" do |form|
+      .chat-main__message-area__form__contents
+        = form.text_field :email, :placeholder => "type a message", class: "chat-main__message-area__form__contents__text"
+        %label{class: "chat-main__message-area__form__contents__image far fa-image fa-2x"}
+          %input{type: "file", class: "hidden_btn"}
+      = form.submit value="Send" ,class: "chat-main__message-area__form__btn"
+
+      -# 画像の貼り付けができていない
