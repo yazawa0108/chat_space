@@ -36,7 +36,10 @@
     &__group-list{
       height: 71px;
       padding: 0 20px;
-      color: white;
+      &__group-tag{
+        color: white;
+        text-decoration: none;
+      }
       &__group-name{
         padding: 20px 0 5px;
         font-size: 15px;
